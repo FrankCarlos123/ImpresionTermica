@@ -1,0 +1,137 @@
+:root {
+    --primary-color: #1a1a1a;
+    --secondary-color: #2c2c2c;
+    --accent-color: #2871b5;
+    --text-color: #ffffff;
+    --background-color: #121212;
+    --input-background: #333333;
+    --button-hover: #2871b5;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 20px;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    min-height: 100vh;
+}
+
+.main-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    max-width: 1200px;
+}
+
+.section {
+    background-color: var(--secondary-color);
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    padding: 20px;
+    width: 300px;
+}
+
+h2 {
+    color: var(--accent-color);
+    text-align: center;
+    margin-top: 0;
+}
+
+input, button {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #444;
+    border-radius: 4px;
+    box-sizing: border-box;
+    background-color: var(--input-background);
+    color: var(--text-color);
+}
+
+button {
+    background-color: var(--accent-color);
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: var(--button-hover);
+}
+
+.etiqueta {
+    background-color: #ffffff;
+    color: #000000;
+    margin-top: 20px;
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    width: 75mm;
+    height: 50mm;
+}
+
+.etiqueta .sector {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 75mm;
+    height: 25mm;
+    padding: 5mm;
+    box-sizing: border-box;
+}
+
+.etiqueta img {
+    max-width: 20mm;
+    height: auto;
+}
+
+.imagenes {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+}
+
+.imagen-btn {
+    width: calc(50% - 5px);
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.imagen-btn img {
+    width: 100%;
+    height: auto;
+    margin-bottom: 5px;
+    border-radius: 4px;
+}
+
+@media print {
+    body * {
+        visibility: hidden;
+    }
+    .etiqueta, .etiqueta * {
+        visibility: visible;
+    }
+    .etiqueta {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 75mm;
+        height: 50mm;
+        display: flex !important;
+        flex-direction: column;
+    }
+    .etiqueta .sector {
+        width: 75mm;
+        height: 25mm;
+    }
+    .print-page {
+        page-break-after: always;
+    }
+}
